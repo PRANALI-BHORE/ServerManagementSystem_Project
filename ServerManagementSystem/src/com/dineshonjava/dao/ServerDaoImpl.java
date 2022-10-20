@@ -28,6 +28,12 @@ public class ServerDaoImpl implements ServerDao{
 		sessionFactory.getCurrentSession().saveOrUpdate(server);
 		
 	}
+
+//	@Override
+//	public void deleteServer(ServerEntity server) {
+//		sessionFactory.getCurrentSession().createQuery("delete from serverdetails where serverid = "+server.getServerId()).executeUpdate();
+//		
+//	}
 	
 
 }

@@ -7,31 +7,47 @@
 <title>All Servers</title>
 </head>
 <body>
+
 	<h1>List of Servers</h1>
-	<h3>
-		<a href="addd.html">Add More Servers</a>
-	</h3>
+
 
 	<c:if test="${!empty servers}">
 		<table align="left" border="1">
 			<tr>
 				<th>Server ID</th>
 				<th>Server Name</th>
-				<!-- <th>IP Address</th> -->
+				<th>IP Address</th>
 				<th>Server Type(Normal/WIP/Load Balancer)</th>
 				<th>Port Number</th>
+				<th>Commissioned Date</th>
+				<th>isActive</th>
+				<th>Usage Capacity</th>
+				<th>Operating System</th>
+				<th>Team</th>
+				<th>Environment</th>
+				<th>Application</th>
 			</tr>
 
 			<c:forEach items="${servers}" var="server">
 				<tr>
 					<td>${server.serverId}</td>
 					<td>${server.serverName}</td>
-					<%-- <td>${server.IpAddress}</td> --%>
+					<td>${server.ipAddress}</td>
 					<td>${server.serverType}</td>
 					<td>${server.portNumber}</td>
+					<td>${server.commissionedDate}</td>
+					<td>${server.isActive}</td>
+					<td>${server.usageCapacity}</td>
+					<td>${server.operatingSystem}</td>
+					<td>${server.team}</td>
+					<td>${server.env}</td>
+					<td>${server.application}</td>
 				</tr>
 			</c:forEach>
 		</table>
 	</c:if>
+	
+	<a href="addd.html"><p>Add More Servers</p></a>
+
 </body>
 </html>

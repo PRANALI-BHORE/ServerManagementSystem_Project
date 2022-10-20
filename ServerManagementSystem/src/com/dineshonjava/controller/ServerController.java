@@ -49,13 +49,21 @@ public class ServerController {
 		return new ModelAndView("addServer", model);
 	}
 	
+	
 	private ServerEntity prepareModel(ServerBean serverBean){
 		ServerEntity server = new ServerEntity();
 		server.setServerName(serverBean.getServerName());
 		server.setServerType(serverBean.getServerType());
-//		server.setIpAddress(serverBean.getIpAddress());
+		server.setIpAddress(serverBean.getIpAddress());
 		server.setPortNumber(serverBean.getPortNumber());
 		server.setServerId(serverBean.getServerId());
+		server.setCommissionedDate(serverBean.getCommissionedDate());
+		server.setIsActive(serverBean.getIsActive());
+		server.setOperatingSystem(serverBean.getOperatingSystem());
+		server.setTeam(serverBean.getTeam());
+		server.setEnv(serverBean.getEnv());
+		server.setApplication(serverBean.getApplication());
+		server.setUsageCapacity(serverBean.getUsageCapacity());
 		serverBean.setServerId(null);
 		return server;
 	}
@@ -69,50 +77,21 @@ public class ServerController {
 				bean=new ServerBean();
 				bean.setServerId(server.getServerId());
 				bean.setServerName(server.getServerName());
-//				bean.setIpAddress(server.getIpAddress());
+				bean.setIpAddress(server.getIpAddress());
 				bean.setServerType(server.getServerType());
 				bean.setPortNumber(server.getPortNumber());
+				bean.setCommissionedDate(server.getCommissionedDate());
+				bean.setIsActive(server.getIsActive());
+				bean.setOperatingSystem(server.getOperatingSystem());
+				bean.setTeam(server.getTeam());
+				bean.setEnv(server.getEnv());
+				bean.setUsageCapacity(server.getUsageCapacity());
+				bean.setApplication(server.getApplication());
 				beans.add(bean);
 			}
 		}
 		return beans;
 	}
 	
-	
-	
-	
-//	@RequestMapping(value = "/add", method = RequestMethod.GET)
-//	public ModelAndView addEmployee(@ModelAttribute("command")  EmployeeBean employeeBean,
-//			BindingResult result) {
-//		Map<String, Object> model = new HashMap<String, Object>();
-//		model.put("employees",  prepareListofBean(employeeService.listEmployeess()));
-//		return new ModelAndView("addEmployee", model);
-//	}
-
-	
-//	@RequestMapping(value="/employees", method = RequestMethod.GET)
-//	public ModelAndView listEmployees() {
-//		Map<String, Object> model = new HashMap<String, Object>();
-//		model.put("employees",  prepareListofBean(employeeService.listEmployeess()));
-//		return new ModelAndView("employeesList", model);
-//	}
-	
-//	private List<EmployeeBean> prepareListofBean(List<Employee> employees){
-//		List<EmployeeBean> beans = null;
-//		if(employees != null && !employees.isEmpty()){
-//			beans = new ArrayList<EmployeeBean>();
-//			EmployeeBean bean = null;
-//			for(Employee employee : employees){
-//				bean = new EmployeeBean();
-//				bean.setName(employee.getEmpName());
-//				bean.setId(employee.getEmpId());
-//				bean.setAddress(employee.getEmpAddress());
-//				bean.setSalary(employee.getSalary());
-//				bean.setAge(employee.getEmpAge());
-//				beans.add(bean);
-//			}
-//		}
-//		return beans;
-//	}
 	
 }

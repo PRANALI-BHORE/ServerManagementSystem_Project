@@ -29,6 +29,12 @@ public class ServerServiceImpl implements ServerService{
 		serverDao.addServer(server);
 		
 	}
+
+//	@Override
+//	public void deleteServer(ServerEntity server) {
+//		serverDao.deleteServer(server);
+//		
+//	}
 	
 	
 }

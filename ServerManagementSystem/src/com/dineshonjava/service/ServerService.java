@@ -10,4 +10,6 @@ public interface ServerService {
 	public List<ServerEntity> listServers();
 	
 	public void addServer(ServerEntity server);
+	
+//	public void deleteServer(ServerEntity server);
 }
