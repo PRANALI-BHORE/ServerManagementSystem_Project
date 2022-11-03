@@ -10,5 +10,6 @@
     <h2>Server Management System</h2>
     <h2>1. <a href="servers.html">List of Servers</a></h2>
     <h2>2. <a href="addd.html">Add Server</a></h2>
+    <h2>3. <a href="newpage.html">Select Filters For Server List</a></h2>
   </body>
 </html>

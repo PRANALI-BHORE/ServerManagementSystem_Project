@@ -13,7 +13,7 @@
 	<form:form method="POST" action="/sdnext/savee.html">
 		<table>
 			<tr>
-				<td><form:label path="serverId">Server ID</form:label></td>
+				<td><form:label path="serverId">Server ID: </form:label></td>
 				<td><form:input path="serverId" value="${server.serverId}"
 						readonly="true" /></td>
 			</tr>

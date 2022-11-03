@@ -30,6 +30,12 @@ public class ServerServiceImpl implements ServerService{
 		
 	}
 
+	@Override
+	public List<ServerEntity> getServerByEnv(String server) {
+		return serverDao.getServerByEnv(server);
+		
+	}
+
 //	@Override
 //	public void deleteServer(ServerEntity server) {
 //		serverDao.deleteServer(server);

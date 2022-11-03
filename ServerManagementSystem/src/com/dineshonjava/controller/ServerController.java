@@ -49,6 +49,37 @@ public class ServerController {
 		return new ModelAndView("addServer", model);
 	}
 	
+//	@RequestMapping(value = "/getServerByEnv", method = RequestMethod.POST) action="/sdnext/save.html"
+	@RequestMapping(value = "/getServerByEnv", method = RequestMethod.GET) 
+	public ModelAndView getServerByEnv(@ModelAttribute("command") ServerBean s1, 
+			BindingResult result) {
+		System.out.println("Environment is : "+s1.getEnv());
+		System.out.println(s1.getEnv().getClass());
+		Map<String, Object> model = new HashMap<String, Object>();
+		model.put("servers", prepareServerBean(serverService.getServerByEnv(s1.getEnv())));
+		return new ModelAndView("servers",model);
+		
+//		Map<String, Object> model=new HashMap();
+//		model.put("s1",s1.getEnv());
+//		return new ModelAndView("serverByEnv",model);
+		
+		
+//		serverService.getServerByEnv(s1.getEnv());
+//		ServerEntity server = s1.getEnv();
+//		serverService.addServer(server);
+//		return new ModelAndView("redirect:/addd.html");
+		
+//		Map<String, Object> model=new HashMap();
+//		model.put("servers", prepareListofBean(serverService.listServers()));
+//		return new ModelAndView("serverByEnv",model);
+	}
+	
+	@RequestMapping(value="/newpage", method = RequestMethod.GET)
+	public ModelAndView newpage() {
+		Map<String, Object> model = new HashMap<String, Object>();
+		model.put("servers",  prepareListofBean(serverService.listServers()));
+		return new ModelAndView("serverByEnv", model);
+	}
 	
 	private ServerEntity prepareModel(ServerBean serverBean){
 		ServerEntity server = new ServerEntity();
@@ -91,6 +122,13 @@ public class ServerController {
 			}
 		}
 		return beans;
+	}
+	
+	private ServerBean prepareServerBean(List<ServerEntity> server){
+		ServerBean bean = new ServerBean();
+		bean.setServerName(((ServerBean) server).getServerName());
+		
+		return bean;
 	}
 	
 	

@@ -11,5 +11,7 @@ public interface ServerService {
 	
 	public void addServer(ServerEntity server);
 	
+	public List<ServerEntity> getServerByEnv(String server);
+	
 //	public void deleteServer(ServerEntity server);
 }
